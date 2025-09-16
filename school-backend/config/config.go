@@ -3,6 +3,7 @@ package config
 import (
 	"context"
 	"time"
+	"github.com/joho/godotenv"
 )
 
 type AppConfig struct {
@@ -12,6 +13,7 @@ type AppConfig struct {
 }
 
 func LoadConfig() *AppConfig{
+	godotenv.Load()//loads .env file
 	return &AppConfig{
 		Port: GetEnv("PORT", "8080"),
 		MongoURI: GetEnv("MONGO_URI", ""),

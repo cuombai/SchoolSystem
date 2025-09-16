@@ -1,5 +1,10 @@
 package config
 
+import (
+	"context"
+	"time"
+)
+
 type AppConfig struct {
 	Port string
 	MongoURI string
@@ -13,4 +18,8 @@ func LoadConfig() *AppConfig{
 		DBName: GetEnv("DB_NAME", "school"),
 	}
 
+}
+
+func GetContext()(context.Context, context.CancelFunc){
+	return context.WithTimeout(context.Background(), 10*time.Second)
 }

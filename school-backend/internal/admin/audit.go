@@ -6,7 +6,7 @@ import (
 )
 
 func GetAuditLogs() ([]AuditLog, error) {
-    logs, err := repository.GetAuditLogs()
+    logs, err := repository.GetAuditLogs(50)
     if err != nil {
         return nil, err
     }

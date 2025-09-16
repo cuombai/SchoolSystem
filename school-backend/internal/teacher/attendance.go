@@ -14,6 +14,11 @@ func MarkAttendance(req AttendanceRequest, teacherID string) error {
         return err
     }
 
+    teacherObjID, er := primitive.ObjectIDFromHex(teacherID)
+    if er != nil {
+        return er
+    }
+
     date, err := time.Parse("2006-01-02", req.Date)
     if err != nil {
         return err
@@ -23,7 +28,7 @@ func MarkAttendance(req AttendanceRequest, teacherID string) error {
         StudentID: studentObjID,
         Date:      date,
         Status:    req.Status,
-        MarkedBy:  primitive.ObjectIDHex(teacherID),
+        MarkedBy: teacherObjID,
     }
 
     return repository.InsertAttendance(record)

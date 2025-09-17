@@ -1,0 +1,10 @@
+:root {
+  --color-admin: #e63946;
+  --color-teacher: #457b9d;
+  --color-student: #2a9d8f;
+
+  --font-main: 'Segoe UI', sans-serif;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+}

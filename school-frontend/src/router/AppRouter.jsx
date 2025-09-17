@@ -1,0 +1,49 @@
+import { Routes, Route } from "react-router-dom";
+import Login from "../pages/Login";
+import Layout from "../components/Layout";
+import ProtectedRoute from "../components/ProtectedRoute";
+
+// Admin pages
+import Dashboard from "../pages/Admin/Dashboard";
+import Users from "../pages/Admin/Users";
+import AuditLogs from "../pages/Admin/AuditLogs";
+
+// Teacher pages
+import Attendance from "../pages/Teacher/Attendance";
+import Grades from "../pages/Teacher/Grades";
+import ClassList from "../pages/Teacher/ClassList";
+
+// Student pages
+import Performance from "../pages/Student/Performance";
+import Transcript from "../pages/Student/Transcript";
+import Fees from "../pages/Student/Fees";
+
+const AppRouter = () => (
+  <Routes>
+    {/* Public route */}
+    <Route path="/login" element={<Login />} />
+
+    {/* Protected layout wrapper */}
+    <Route element={<ProtectedRoute><Layout /></ProtectedRoute>}>
+      {/* Admin routes */}
+      <Route path="/admin" element={<Dashboard />} />
+      <Route path="/admin/users" element={<Users />} />
+      <Route path="/admin/audit" element={<AuditLogs />} />
+
+      {/* Teacher routes */}
+      <Route path="/teacher/attendance" element={<Attendance />} />
+      <Route path="/teacher/grades" element={<Grades />} />
+      <Route path="/teacher/class/:id" element={<ClassList />} />
+
+      {/* Student routes */}
+      <Route path="/student/performance" element={<Performance />} />
+      <Route path="/student/transcript" element={<Transcript />} />
+      <Route path="/student/fees" element={<Fees />} />
+    </Route>
+
+    {/* Optional: fallback route */}
+    <Route path="*" element={<Login />} />
+  </Routes>
+);
+
+export default AppRouter;

@@ -1,0 +1,18 @@
+.role-badge {
+  padding: var(--spacing-sm);
+  border-radius: 4px;
+  font-weight: bold;
+  color: white;
+}
+
+.role-badge.admin {
+  background-color: var(--color-admin);
+}
+
+.role-badge.teacher {
+  background-color: var(--color-teacher);
+}
+
+.role-badge.student {
+  background-color: var(--color-student);
+}

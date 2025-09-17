@@ -1,9 +1,11 @@
+import React from "react";
 import { useState, useContext } from "react";
 import { login } from "../api/auth";
-import { AuthContext } from "../context/AuthContext";
+import { AuthContext } from "../context/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import useRoleRedirect from "../hooks/useRoleRedirect";
 import "../styles/form.css";
+import { Link } from "react-router-dom";
 
 
 const Login = () => {
@@ -39,6 +41,9 @@ const Login = () => {
         onChange={(e) => setForm({ ...form, password: e.target.value })}
       />
       <button type="submit">Login</button>
+
+    <Link to="/forgot-password">Forgot password?</Link>
+
     </form>
   );
 };

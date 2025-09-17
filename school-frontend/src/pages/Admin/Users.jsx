@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { createUser } from "../../api/admin";
-import "../styles/form.css";
+// import "../styles/form.css";
+import "../../styles/form.css";
 
 const Users = () => {
   const [form, setForm] = useState({ name: "", email: "", role: "teacher", password: "" });

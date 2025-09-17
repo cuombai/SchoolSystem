@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { getAuditLogs } from "../../api/admin";
-import { formatDate } from "../utils/formatDate";
+// import { formatDate } from "@/utils/formatDate";
+
+
 
 const AuditLogs = () => {
   const [logs, setLogs] = useState([]);
@@ -14,7 +16,7 @@ const AuditLogs = () => {
       <h2>Audit Logs</h2>
       <ul>
         {logs.map((log, i) => (
-          <li>{formatDate(log.timestamp)} - {log.action} by {log.actorID}</li>
+          <li>{log.timestamp} - {log.action} by {log.actorID}</li>
 
         ))}
       </ul>

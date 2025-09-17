@@ -11,6 +11,8 @@ func SetupRouter() *gin.Engine {
 
 	//Public routes
 	r.POST("/login", handler.LoginHandler)
+	r.POST("/api/reset-password/:token", handler.ResetPasswordHandler)
+
 
 	//Protected routes
 	auth := r.Group("/")

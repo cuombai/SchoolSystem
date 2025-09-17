@@ -1,3 +1,4 @@
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Login from "../pages/Login";
 import Layout from "../components/Layout";
@@ -17,6 +18,11 @@ import ClassList from "../pages/Teacher/ClassList";
 import Performance from "../pages/Student/Performance";
 import Transcript from "../pages/Student/Transcript";
 import Fees from "../pages/Student/Fees";
+import ForgotPassword from "../pages/ForgotPassword";
+import ResetPassword from "../pages/ResetPassword";
+
+
+
 
 const AppRouter = () => (
   <Routes>
@@ -43,6 +49,10 @@ const AppRouter = () => (
 
     {/* Optional: fallback route */}
     <Route path="*" element={<Login />} />
+    {/* password reset */}
+    <Route path="/forgot-password" element={<ForgotPassword />} />
+    <Route path="/reset-password/:token" element={<ResetPassword />} />
+    
   </Routes>
 );
 

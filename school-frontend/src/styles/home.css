@@ -1,0 +1,30 @@
+.home-container {
+  padding: 2rem;
+  font-family: var(--font-main);
+}
+
+.home-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.school-info {
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.login-options {
+  text-align: center;
+}
+
+.login-btn {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-teacher);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}

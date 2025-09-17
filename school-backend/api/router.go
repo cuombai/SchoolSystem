@@ -1,14 +1,16 @@
 package api
 
 import (
-	"schoolsystem/school-backend/middleware"
-	"github.com/gin-gonic/gin"
 	"schoolsystem/school-backend/api/handler"
+	"schoolsystem/school-backend/middleware"
+
+	"github.com/gin-contrib/cors"
+	"github.com/gin-gonic/gin"
 )
 
 func SetupRouter() *gin.Engine {
 	r := gin.Default()
-
+	r.Use(cors.Default())
 	//Public routes
 	r.POST("/login", handler.LoginHandler)
 	r.POST("/api/reset-password/:token", handler.ResetPasswordHandler)

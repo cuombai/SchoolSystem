@@ -16,13 +16,17 @@ api.interceptors.request.use((config) => {
 
 //global error handling
 
-api.interceptors.response.use(
-  (res) => res,
-  (err) => {
-    console.error("API Error:", err.response?.data || err.message);
-    return Promise.reject(err);
+api.interceptors.request.use((config) => {
+  // Skip attaching token for login or public routes
+  if (!config.url.includes("/login")) {
+    const token = localStorage.getItem("token");
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
   }
-);
+  return config;
+});
+
 
 
 export default api;

@@ -1,30 +1,83 @@
+/* styles/home.css */
+
 .home-container {
+  font-family: 'Segoe UI', sans-serif;
+  padding: 0;
+  margin: 0;
+  color: #333;
+}
+
+.hero {
+  background: linear-gradient(to right, #004080, #0066cc);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-cta {
+  background-color: white;
+  color: #004080;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.school-info, .login-options {
   padding: 2rem;
-  font-family: var(--font-main);
+  max-width: 800px;
+  margin: auto;
 }
 
-.home-header {
-  text-align: center;
-  margin-bottom: 2rem;
+.school-info h2, .login-options h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
 }
 
-.school-info {
-  background-color: #f9f9f9;
-  padding: 1.5rem;
-  border-radius: 8px;
-  margin-bottom: 2rem;
-}
-
-.login-options {
-  text-align: center;
+.login-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
 .login-btn {
-  display: inline-block;
-  margin: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  background-color: var(--color-teacher);
+  background-color: #004080;
   color: white;
+  padding: 10px 16px;
+  border-radius: 5px;
   text-decoration: none;
-  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #003366;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .login-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
 }

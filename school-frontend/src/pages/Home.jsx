@@ -1,14 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/home.css"; // optional styling
+import "../styles/home.css";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
+    <>
+    <Navbar/>
     <div className="home-container">
-      <header className="home-header">
-        <h1>Welcome to Kisumu School System</h1>
-        <p>Empowering education through technology.</p>
-      </header>
+      <section className="hero">
+        <div className="hero-content">
+          <h1>Welcome to Kisumu School System</h1>
+          <p>Empowering education through technology.</p>
+          <Link to="/login" className="hero-cta">Get Started</Link>
+        </div>
+      </section>
 
       <section className="school-info">
         <h2>About Us</h2>
@@ -27,6 +34,8 @@ const Home = () => {
         </div>
       </section>
     </div>
+    <Footer/>
+    </>
   );
 };
 

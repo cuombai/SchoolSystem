@@ -1,0 +1,44 @@
+//READ ME FILE
+
+SCHOOL-FRONTEND
+
+src/
+├── api/               # Axios instance + API calls
+│   ├── auth.js
+│   ├── admin.js
+│   ├── teacher.js
+│   └── student.js
+├── assets/            # Static files (images, icons)
+├── components/        # Reusable UI components
+│   ├── Navbar.jsx
+│   ├── Sidebar.jsx
+│   ├── ProtectedRoute.jsx
+│   └── RoleBadge.jsx
+├── context/           # Global state (auth, user)
+│   └── AuthContext.jsx
+├── hooks/             # Custom hooks (e.g. useAuth, useFetch)
+├── pages/             # Role-based views
+│   ├── Login.jsx
+│   ├── Admin/
+│   │   ├── Dashboard.jsx
+│   │   ├── Users.jsx
+│   │   └── AuditLogs.jsx
+│   ├── Teacher/
+│   │   ├── Attendance.jsx
+│   │   ├── Grades.jsx
+│   │   └── ClassList.jsx
+│   └── Student/
+│       ├── Performance.jsx
+│       ├── Transcript.jsx
+│       └── Fees.jsx
+├── router/            # Route definitions + guards
+│   └── AppRouter.jsx
+├── styles/            # Global or modular CSS
+├── utils/             # Helpers (formatDate, validators)
+├── App.jsx            # Root component
+└── main.jsx           # Entry point
+
+
+SCHOOL-BACKEND
+
+school-backend/ ├── cmd/ # Entry point (main.go) ├── api/ # Gin route handlers ├── config/ # Env config, DB setup ├── internal/ │ ├── auth/ # JWT, login, role-based access │ ├── student/ # Performance, transcript, fees │ ├── teacher/ # Attendance, marks, remarks │ ├── admin/ # User management, audit logs │ └── finance/ # Fee slips, invoices, balances ├── models/ # MongoDB schemas ├── repository/ # DB access layer ├── middleware/ # Auth, logging, rate limiting ├── utils/ # PDF generation, date formatting └── Dockerfile # Containerization

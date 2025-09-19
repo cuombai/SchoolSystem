@@ -5,6 +5,7 @@ import (
 	"os"
 	"schoolsystem/school-backend/api"
 	"schoolsystem/school-backend/config"
+	 "schoolsystem/school-backend/api/handler"
 	// "schoolsystem/school-backend/internal/auth"
 	// "schoolsystem/school-backend/models"
 	// "schoolsystem/school-backend/repository"
@@ -45,6 +46,9 @@ func main() {
 	// 	log.Fatalf("Insert failed: %v", err)
 	// }
 	// log.Println("Admin user created succesfuly")
+
+	//init user from DB
+	handler.Init(config.DB)
 
 
 	//initialize router

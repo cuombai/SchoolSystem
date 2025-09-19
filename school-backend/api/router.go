@@ -3,6 +3,7 @@ package api
 import (
 	"schoolsystem/school-backend/api/handler"
 	"schoolsystem/school-backend/middleware"
+	"time"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
@@ -10,7 +11,14 @@ import (
 
 func SetupRouter() *gin.Engine {
 	r := gin.Default()
-	r.Use(cors.Default())
+	r.Use(cors.New(cors.Config{
+		AllowOrigins: []string{"http://localhost:5173"},
+		AllowMethods: []string{"GET","POST","PUT","DELETE","OPTIONS"},
+		AllowHeaders: []string{"Origin","Content-Type","Authorization"},
+		ExposeHeaders: []string{"Content-Length"},
+		AllowCredentials: true,
+		MaxAge: 12*time.Hour,
+	}))
 	//Public routes
 	r.POST("/login", handler.LoginHandler)
 	r.POST("/signup", handler.SignupHandler)

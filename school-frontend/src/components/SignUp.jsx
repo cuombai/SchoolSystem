@@ -28,8 +28,8 @@ const SignUp = () => {
     <form className="signup-form" onSubmit={handleSubmit}>
       <h2>Create Account</h2>
        <input
-        type="fullname"
-        name="fullname"
+        type="name"
+        name="name"
         placeholder="Enter Your Names"
         value={form.name}
         onChange={handleChange}

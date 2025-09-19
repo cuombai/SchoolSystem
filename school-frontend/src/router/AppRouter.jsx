@@ -21,6 +21,9 @@ import Fees from "../pages/Student/Fees";
 import ForgotPassword from "../pages/ForgotPassword";
 import ResetPassword from "../pages/ResetPassword";
 import Home from "../pages/Home";
+import AdminLanding from "../pages/Admin/Landing";
+import StudentLanding from "../pages/Student/Landing";
+import TeacherLanding from "../pages/Teacher/Landing";
 
 
 
@@ -28,9 +31,13 @@ import Home from "../pages/Home";
 const AppRouter = () => (
   <Routes>
     <Route path="/" element={<Home/>}/>
+    {/* <Route path="/home" element={<HomePage />} /> */}
+
     {/* Public route */}
     <Route path="/login" element={<Login />} />
-
+    <Route path= "/admin" element={<AdminLanding/>}/>
+    <Route path= "/teacher" element={<TeacherLanding/>}/>
+    <Route path= "/student" element={<StudentLanding/>}/>
     {/* Protected layout wrapper */}
     <Route element={<ProtectedRoute><Layout /></ProtectedRoute>}>
       {/* Admin routes */}

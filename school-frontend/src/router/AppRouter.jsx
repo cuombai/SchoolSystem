@@ -24,6 +24,10 @@ import Home from "../pages/Home";
 import AdminLanding from "../pages/Admin/Landing";
 import StudentLanding from "../pages/Student/Landing";
 import TeacherLanding from "../pages/Teacher/Landing";
+import ContactUs from "../components/ContactUs";
+import AboutUs from "../components/AboutUs";
+import SignUp from "../components/SignUp";
+
 
 
 
@@ -35,6 +39,13 @@ const AppRouter = () => (
 
     {/* Public route */}
     <Route path="/login" element={<Login />} />
+    <Route path="/contact" element={<ContactUs />} />
+    <Route path="/about" element={<AboutUs />} />
+    <Route path="/signup" element={<SignUp />} />
+
+    
+    
+    {/* protected Routes */}
     <Route path= "/admin" element={<AdminLanding/>}/>
     <Route path= "/teacher" element={<TeacherLanding/>}/>
     <Route path= "/student" element={<StudentLanding/>}/>

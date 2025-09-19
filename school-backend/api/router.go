@@ -13,6 +13,7 @@ func SetupRouter() *gin.Engine {
 	r.Use(cors.Default())
 	//Public routes
 	r.POST("/login", handler.LoginHandler)
+	r.POST("/signup", handler.SignupHandler)
 	r.POST("/api/reset-password/:token", handler.ResetPasswordHandler)
 
 
